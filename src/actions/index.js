@@ -32,7 +32,7 @@ export const fetchCharacters = () => dispatch => {
     axios
         .get(apiBaseURL)
         .then(res => {
-            dispatch(setCharacters(res.data));
+            dispatch(setCharacters(res.data.results));
         })
         .catch(error => {
             dispatch(fetchFailed(error.message));

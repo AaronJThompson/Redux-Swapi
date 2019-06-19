@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Provider } from 'react-redux';
 import { CharacterListView } from "./views";
 import styled from 'styled-components';
 

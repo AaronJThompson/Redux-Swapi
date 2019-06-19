@@ -28,7 +28,7 @@ export function fetchFailed(error) {
     };
 }
 
-export const fetchCharacter = () => dispatch => {
+export const fetchCharacters = () => dispatch => {
     axios
         .get(apiBaseURL)
         .then(res => {
@@ -36,5 +36,5 @@ export const fetchCharacter = () => dispatch => {
         })
         .catch(error => {
             dispatch(fetchFailed(error.message));
-        })
+        });
 }

@@ -9,21 +9,30 @@ const InfoContainer = styled.div`
   width: 100%;
   height: 100%;
   background: linear-gradient(180deg, #FF0000 0%, #930000 100%);
-  clip-path: polygon(0 0, 66% 0, 90% 100%, 0% 100%);
+  @media (min-width: 768px) {
+    clip-path: polygon(0 0, 66% 0, 90% 100%, 0% 100%);
+  }
 
   h2{
-      font-size: 3rem;
+      display: block;
+      font-size: 2.2rem;
       font-weight: 500;
-      margin-top: 0.5rem;
-      margin-left: 0.5rem;
-      max-width: 66%;
+      text-align: center;
+      margin-top: 0.8rem;
+      width: 100%;
+
+      @media (min-width: 768px) {
+        text-align: left;
+        max-width: 66%;
+        margin-left: 0.8rem;
+      }
   }
 `;
 
 const StyledCharacter = styled.div`
     width: 35rem;
     max-width: 100vw;
-    min-height: 20rem;
+    min-height: 10rem;
     background-color: white;
     font-size: 1.2rem;
     margin: 1rem 0.5rem;
@@ -31,11 +40,14 @@ const StyledCharacter = styled.div`
     color: white;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: 'Roboto', sans-serif;
+    @media (min-width: 768px) {
+      min-height: 20rem
+    }
 `;
 
 const InfoList = styled.ul`
   display: flex;
-  width: 85%;
+  width: 100%;
   justify-content: space-around;
   margin-bottom: 5%;
   height: 3rem;
@@ -53,6 +65,9 @@ const InfoList = styled.ul`
       font-family: 'Roboto Condensed', sans-serif;
       font-weight: 200;
       font-size: 0.8rem;
+  }
+  @media (min-width: 768px) {
+    width: 85%;
   }
 `
 const Character = props => {

@@ -3,6 +3,8 @@ const initialState = {
   characters: [],
   fetching: true,
   error: null,
+  nextPage: "",
+  previousPage: "",
 };
 export const charsReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -15,6 +17,8 @@ export const charsReducer = (state = initialState, action) => {
       return { ...state, characters: action.payload, fetching: false };
     case (actionTypes.FAILURE):
       return { ...state, error: action.payload, fetching: false};
+    case (actionTypes.SET_PAGES):
+      return { ...state, nextPage: action.payload.next, previousPage: action.payload.previous};
     default:
       return state;
   }

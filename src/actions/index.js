@@ -28,9 +28,9 @@ export function fetchFailed(error) {
     };
 }
 
-export const fetchCharacters = () => dispatch => {
+export const fetchCharacters = (page) => dispatch => {
     axios
-        .get(apiBaseURL)
+        .get(page || apiBaseURL)
         .then(res => {
             dispatch(setCharacters(res.data.results));
         })

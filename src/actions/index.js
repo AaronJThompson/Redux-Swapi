@@ -5,16 +5,16 @@ import axios from 'axios';
 // one for fetching, one for success and one for failure
 export const actionTypes = {};
 
-actionTypes.SET_CHARACTERS = 'SET_CHARACTERS';
-actionTypes.FETCH_CHARACTERS = 'FETCH_CHARACTERS';
-actionTypes.FETCH_FAILED = 'FETCH_FAILED';
+actionTypes.SUCCESS = 'SUCCESS';
+actionTypes.FETCHING = 'FETCHING';
+actionTypes.FAILURE = 'FAILURE';
 // our action creator will be a function that returns a function
 // the url to fetch characters from is `https://swapi.co/api/people/`
 // remember that now we have controll over our thunk-based action creator
 export const apiBaseURL = 'https://swapi.co/api/people/';
 export function setCharacters(characters) {
     return {
-        type: actionTypes.SET_CHARACTERS,
+        type: actionTypes.SUCCESS,
         payload: characters,
     };
 }
@@ -23,7 +23,7 @@ export function setCharacters(characters) {
 // TODO: Retry fetch after delay
 export function fetchFailed(error) {
     return {
-        type: actionTypes.FETCH_FAILED,
+        type: actionTypes.FAILURE,
         payload: error,
     };
 }
@@ -37,4 +37,8 @@ export const fetchCharacters = () => dispatch => {
         .catch(error => {
             dispatch(fetchFailed(error.message));
         });
+
+    return {
+        type: actionTypes.FETCHING
+    }
 }

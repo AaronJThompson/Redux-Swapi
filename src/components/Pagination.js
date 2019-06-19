@@ -4,8 +4,11 @@ import { fetchCharacters } from '../actions'
 import styled from 'styled-components';
 
 const ButtonsContainer = styled.div`
-    margin: 2rem 0;
-
+    margin: 2rem auto;
+    width: 100%;
+    max-width: 15rem;
+    display:flex;
+    justify-content: space-between;
     button {
         font-size: 2rem;
         font-weight: 500;
@@ -23,21 +26,23 @@ const ButtonsContainer = styled.div`
 
 function Pagination(props) {
     let nextStyle = {
-        visibility: props.nextPage ? "initial" : "hidden",
+        opacity: props.nextPage ? "1" : "0.2",
     };
     let previousStyle = {
-        visibility: props.previousPage ? "initial" : "hidden",
+        opacity: props.previousPage ? "1" : "0.2",
     };
 
     let goNext = () => {
-        props.fetchCharacters(props.nextPage);
+        if (props.nextPage)
+            props.fetchCharacters(props.nextPage);
     }
     let goPrevious = () => {
-        props.fetchCharacters(props.previousPage);
+        if (props.previousPage)
+            props.fetchCharacters(props.previousPage);
     }
 
     return (
-        <div>
+        <ButtonsContainer>
             <button
                 style={previousStyle}
                 onClick={goPrevious}
@@ -52,7 +57,7 @@ function Pagination(props) {
             >
                 {">"}
             </button>
-        </div>
+        </ButtonsContainer>
     );
 }
 

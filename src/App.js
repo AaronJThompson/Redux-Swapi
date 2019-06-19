@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { CharacterListView } from "./views";
 import styled from 'styled-components';
-
+import Pagination from './components/Pagination';
 import "./styles/App.css";
 import './styles/reset.css';
 
@@ -18,6 +18,7 @@ class App extends Component {
     return (
       <div>
         <Title>Starwars Characters</Title>
+        <Pagination />
         <CharacterListView />
       </div>
     );

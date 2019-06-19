@@ -21,7 +21,7 @@ const ButtonsContainer = styled.div`
     }
 `
 
-export default function Pagination(props) {
+function Pagination(props) {
     let nextStyle = {
         visibility: props.nextPage ? "initial" : "hidden",
     };

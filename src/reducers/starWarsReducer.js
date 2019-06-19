@@ -1,7 +1,7 @@
 import { actionTypes } from "../actions";
 const initialState = {
   characters: [],
-  fetching: false,
+  fetching: true,
   error: null,
 };
 export const charsReducer = (state = initialState, action) => {

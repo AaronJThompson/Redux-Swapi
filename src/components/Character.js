@@ -2,21 +2,27 @@ import React from "react";
 import styled from 'styled-components';
 
 const InfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
   width: 100%;
   height: 100%;
   background: linear-gradient(180deg, #FF0000 0%, #930000 100%);
-  box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25);
   clip-path: polygon(0 0, 66% 0, 90% 100%, 0% 100%);
 
   h2{
       font-size: 3rem;
       font-weight: 500;
-      margin-bottom: 1rem;
+      margin-top: 0.5rem;
+      margin-left: 0.5rem;
+      max-width: 66%;
   }
 `;
 
 const StyledCharacter = styled.div`
-    min-width: 35rem;
+    width: 35rem;
+    max-width: 100vw;
     min-height: 20rem;
     background-color: white;
     font-size: 1.2rem;
@@ -31,6 +37,8 @@ const InfoList = styled.ul`
   display: flex;
   width: 85%;
   justify-content: space-around;
+  margin-bottom: 5%;
+  height: 3rem;
   li{
       text-align: center;
       width: 100%;

@@ -1,14 +1,15 @@
 import React from "react";
 
 import Character from "./Character";
+import './Characters.css';
 
 const CharacterList = props => {
   return (
-    <ul>
+    <div className="character-container">
       {props.characters.map(character => {
         return <Character key={character.name} character={character} />;
       })}
-    </ul>
+    </div>
   );
 };
 
